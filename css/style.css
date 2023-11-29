@@ -1,0 +1,51 @@
+body {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.game {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.player, .dealer {
+    margin-bottom: 20px;
+}
+
+.hand {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 70px;
+    height: 100px;
+    margin: 0 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    display: inline-block;
+}
+
+#result {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #ddd;
+}
