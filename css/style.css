@@ -49,3 +49,15 @@ button {
 button:hover{
     background-color: #ddd;
 }
+
+.hidden{
+    font-size: 75px;
+}
+
+#player-hand{
+    margin-top: 10px;
+}
+
+.player-buttons{
+    margin-top: 10px;
+}
