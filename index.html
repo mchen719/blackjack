@@ -6,6 +6,12 @@
     <title>Blackjack</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script defer src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,6 +23,8 @@
             <div class="hand" id="dealer-hand"></div>
             <p id="dealer-score">Score: 0</p>
         </div>
+
+        <p id="result">Please place a bet!</p>
 
         <div class="player">
             <h2>Player</h2>
@@ -31,8 +39,9 @@
             </div>
         </div>
 
-        <p id="result"></p>
+        
         <button id="start-button">Start Game</button>
+        <button id="playAgain-button">Play Again</button>
         <button id="next-button">Next Hand</button>
     </div>
 </body>
