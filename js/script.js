@@ -133,7 +133,9 @@ function startGame(){
     const betAmount = parseInt(document.getElementById("bet").value)
     if (betAmount <= playerBalance){
         placeBet()
-  
+        
+        document.getElementById("bet-amount").innerText = betAmount
+
         deck = []
         playerHand = []
         dealerHand = []
@@ -167,8 +169,10 @@ function hit(){
     updateScores()
 
     if (calculateHand(playerHand) > 21 && playerBalance === 0){
+        displayHand(dealerHand, "dealer-hand", hideSecondCard = false)
         endGame("You lost all your money! Maybe Blackjack isn't for you.")
     }else if (calculateHand(playerHand) > 21) {
+        displayHand(dealerHand, "dealer-hand", hideSecondCard = false)
         endRound("Dealer wins! You Busted")
         nextButton.style.display = "block"
     }
@@ -180,13 +184,11 @@ function stand(){
     const dealerScore = calculateHand(dealerHand)
     const playerScore = calculateHand(playerHand)
 
-    if(dealerScore > playerScore && dealerScore <= 21){
-        updateScores()
-        determineWinner()
-        return;
-    }
-
     while(calculateHand(dealerHand)< 17){
+        if (dealerScore === playerScore && dealerScore <= 10){
+            dealCard(dealerHand)
+            break
+        }
         if(dealerScore > playerScore){
             break
         } else {
@@ -207,7 +209,7 @@ function updateScores(){
     const dealerScoreElement = document.getElementById("dealer-score")
 
     if (showDealerScore) {
-          dealerScoreElement.innerText = `Score: ${dealerScore}`
+        dealerScoreElement.innerText = `Score: ${dealerScore}`
     } else {
         dealerScoreElement.innerText = "Score: ?"
     }
@@ -268,10 +270,14 @@ function addBet(dealerScore, playerScore){
 }
 
 function nextHand(){
+    showDealerScore = false
+
     const betAmount = parseInt(document.getElementById("bet").value)
     if (betAmount <= playerBalance){
         placeBet()
-  
+        
+        document.getElementById("bet-amount").innerText = betAmount
+
         playerHand = []
         dealerHand = []
     
@@ -301,8 +307,13 @@ function playAgain(){
     playerHand = []
     dealerHand = []
 
+    document.getElementById("bet-amount").innerText = "0"
+
+    displayHand(playerHand, "player-hand", hideSecondCard = false)
+    displayHand(dealerHand, "dealer-hand", hideSecondCard = false)
+
     document.getElementById("result").innerText = "Place your bet"
-    document.getElementById("start-button").style.display = ""
+    document.getElementById("start-button").style.display = "block"
     document.getElementById("start-button").disable = false
     playAgainButton.style.display = "none"
     document.getElementById("dealer-score").innerText = "Score: ?"

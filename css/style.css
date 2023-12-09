@@ -35,11 +35,11 @@ h1{
 }
 
 h2{
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .player{
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .player, .dealer {
@@ -63,12 +63,23 @@ h2{
     padding: 10px;
 }
 
+#dealer-score, #player-score {
+    margin-top: -35px;
+}
+
 /*Button Styles*/
 button {
-    padding: 10px 20px;
-    margin: 5px;
+    padding: 12px 24px;
     font-size: 16px;
+    text-align: center;
+    text-decoration: none;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.1);
 }
 
 .player-buttons{
@@ -86,7 +97,12 @@ button {
 }
 
 button:hover{
-    background-color: #ddd;
+    background: #2989b9;
+}
+
+.button:active {
+    transform: translate(2px);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* card styles*/

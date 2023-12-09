@@ -20,8 +20,8 @@
 
         <div class="dealer">
             <h2>Dealer</h2>
-            <div class="hand" id="dealer-hand"></div>
             <p id="dealer-score">Score: 0</p>
+            <div class="hand" id="dealer-hand"></div>
         </div>
 
         <p id="result">Please place a bet!</p>
@@ -31,8 +31,10 @@
             <p id="player-score">Score: 0</p>
             <div class="hand" id="player-hand"></div>
             <p>Balance: $<span id="player-balance">100</span></p>
+            <p>Bet amount: $ <span id="bet-amount">0</span></p>
             <label for="bet">Bet:</label>
             <input type="number" id="bet" min="1" max="100" step="1">
+            
             <div class="player-buttons">
                 <button id="hit-button">Hit</button>
                 <button id="stand-button">Stand</button>

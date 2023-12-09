@@ -9,11 +9,11 @@ Start the Blackjack game
         Display player's balance
         Ask the player for their bet amount
 
-        Deal two cards to the player and the dealer
-        Calculate and display the scores for the player and the dealer (hide one dealer card)
+        Deal two cards to the player and the dealer (Hide the second card)
+        Calculate and display the scores for the player and the dealer (hide dealer's score)
 
-        If player's score is 21 (Blackjack) immediately:
-            Display "Blackjack! You win!" and award the bet amount multiplied by 1.5 to the player's balance
+        If player's score is 21:
+            Display "Blackjack! You win!" and award the bet amount multiplied by 2 to the player's balance
             Continue to the next round
 
         Ask the player to Hit or Stand:
