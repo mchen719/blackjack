@@ -11,9 +11,6 @@ let playerHand = []
 let dealerHand = []
 let showDealerScore = false
 
-/*------Cache Elements-------*/
-
-
 /*------Event Listeners-------*/
 const hitButton = document.getElementById("hit-button")
 const standButton = document.getElementById("stand-button")
@@ -133,7 +130,7 @@ function startGame(){
     const betAmount = parseInt(document.getElementById("bet").value)
     if (betAmount <= playerBalance){
         placeBet()
-        
+
         document.getElementById("bet-amount").innerText = betAmount
 
         deck = []
@@ -149,14 +146,13 @@ function startGame(){
 
         displayHand(playerHand, "player-hand", hideSecondCard = false)
         displayHand(dealerHand, "dealer-hand", hideSecondCard = true)
-        document.getElementById("result").innerText = "Please choose to hit or stand"
 
+        document.getElementById("result").innerText = "Please choose to hit or stand"
         document.getElementById("hit-button").disabled = false
         document.getElementById("stand-button").disabled = false
         document.getElementById("start-button").style.display = "none"
         document.getElementById("playAgain-button").style.display = "none"
         
-
         updateScores()
     }else{
         alert("Insufficient balance. Please place a valid bet.")
@@ -255,13 +251,10 @@ function addBet(dealerScore, playerScore){
         playerBalance = playerBalance + (betAmount * 2)
     } else if (dealerScore > 21){
         playerBalance = playerBalance + (betAmount * 2)
-        console.log(playerBalance)
     } else if (playerScore > dealerScore){
         playerBalance = playerBalance + (betAmount * 2)
-        console.log(playerBalance)
     } else if (playerScore === dealerScore){
         playerBalance = playerBalance + betAmount
-        console.log(playerBalance)
     } else {
         playerBalance = playerBalance
     }
